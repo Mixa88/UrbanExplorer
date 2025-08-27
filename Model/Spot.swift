@@ -6,3 +6,30 @@
 //
 
 import Foundation
+import MapKit
+
+struct Spot: Identifiable, Codable, Equatable {
+    var id: UUID
+    var name: String
+    var notes: String
+    let latitude: Double
+    let longitude: Double
+    
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    static func == (lhs: Spot, rhs: Spot) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    #if DEBUG
+    static let example = Spot(
+        id: UUID(),
+        name: "Example Spot",
+        notes: "This is an example spot.",
+        latitude: 50.4501,
+        longitude: 30.5234
+    )
+    #endif
+}
