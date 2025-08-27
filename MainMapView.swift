@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainMapView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("Map Screen")
     }
 }
 
 #Preview {
-    ContentView()
+    MainMapView()
 }
