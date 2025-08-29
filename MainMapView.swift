@@ -43,6 +43,17 @@ struct MainMapView: View {
                         viewModel.addSpot(at: coordinate)
                     }
                 }
+                .sheet(item: $viewModel.selectedSpot) { spot in
+                    EditSpotView(
+                        spot: spot,
+                        onSave: { updatedSpot in
+                            viewModel.update(spot: updatedSpot)
+                        },
+                        onDelete: { spotToDelete in // <-- Теперь мы принимаем аргумент
+                            viewModel.deleteSpot(spot: spotToDelete) // <-- И передаем его в ViewModel
+                        }
+                    )
+                }
                 .toolbar {
                     Button("Map Style") {
                         viewModel.isHybrid.toggle()

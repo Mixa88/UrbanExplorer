@@ -62,5 +62,12 @@ extension MainMapView {
             save()
         }
         
+        func deleteSpot(spot: Spot) {
+            if let index = spots.firstIndex(of: spot) {
+                spots.remove(at: index)
+                save()
+            }
+        }
+        
     }
 }

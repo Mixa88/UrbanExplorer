@@ -8,11 +8,55 @@
 import SwiftUI
 
 struct EditSpotView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    @State private var viewModel: ViewModel
+    
+    var onSave: (Spot) -> Void
+    var onDelete: (Spot) -> Void
+    
+    init(spot: Spot, onSave: @escaping (Spot) -> Void, onDelete: @escaping (Spot) -> Void) {
+        self.onSave = onSave
+        self.onDelete = onDelete
+        
+        _viewModel = State(initialValue: ViewModel(spot: spot))
+        
+    }
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Spot name", text: $viewModel.name)
+                }
+                
+                Section("Notes") {
+                    TextEditor(text: $viewModel.notes)
+                        .frame(minHeight: 75)
+                }
+                
+                Section("Delete Spot") {
+                    Button("Delete") {
+                        onDelete(viewModel.spot)
+                        dismiss()
+                    }
+                    .buttonStyle(.automatic)
+                    .bold()
+                }
+            }
+            .navigationTitle("Spot details")
+            .toolbar {
+                Button("Save") {
+                    let newSpot = viewModel.save()
+                    onSave(newSpot)
+                    dismiss()
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    EditSpotView()
+    EditSpotView(spot: .example, onSave: { _ in }, onDelete: { _ in })
 }
