@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		BA0E7DB32E5F36EA00A4DA88 /* UrbanExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0E7DC82E5F379E00A4DA88 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
+		BA4FD7C72E631EC10091DC78 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BA681C1B2E5F826900B8C4E5 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BAD1B1692E61C6E70002E7C2 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +50,11 @@
 			sourceTree = "<group>";
 		};
 		BA0E7DCA2E5F379E00A4DA88 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA4FD7C92E631EC10091DC78 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +122,10 @@
 			productRefGroup = BA0E7DB42E5F36EA00A4DA88 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = BA4FD7C92E631EC10091DC78 /* Products */;
+					ProjectRef = BA4FD7C72E631EC10091DC78 /* UrbanExplorer.xcodeproj */;
+				},
 				{
 					ProductGroup = BA0E7DCA2E5F379E00A4DA88 /* Products */;
 					ProjectRef = BA0E7DC82E5F379E00A4DA88 /* UrbanExplorer.xcodeproj */;

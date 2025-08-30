@@ -57,7 +57,7 @@ extension MainMapView {
         }
         
         func addSpot(at coordinate: CLLocationCoordinate2D) {
-            let newSpot = Spot(id: UUID(), name: "New Spot", notes: "", latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let newSpot = Spot(id: UUID(), name: "New Spot", notes: "", rating: 4, latitude: coordinate.latitude, longitude: coordinate.longitude)
             spots.append(newSpot)
             save()
         }

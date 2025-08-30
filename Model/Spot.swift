@@ -12,6 +12,7 @@ struct Spot: Identifiable, Codable, Equatable {
     var id: UUID
     var name: String
     var notes: String
+    var rating: Int
     let latitude: Double
     let longitude: Double
     
@@ -28,6 +29,7 @@ struct Spot: Identifiable, Codable, Equatable {
         id: UUID(),
         name: "Example Spot",
         notes: "This is an example spot.",
+        rating: 4,
         latitude: 50.4501,
         longitude: 30.5234
     )

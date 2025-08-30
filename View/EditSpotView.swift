@@ -29,6 +29,7 @@ struct EditSpotView: View {
             Form {
                 Section {
                     TextField("Spot name", text: $viewModel.name)
+                    RatingView(rating: $viewModel.rating)
                 }
                 
                 Section("Notes") {
