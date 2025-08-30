@@ -13,6 +13,7 @@ struct Spot: Identifiable, Codable, Equatable {
     var name: String
     var notes: String
     var rating: Int
+    var imageData: Data?
     let latitude: Double
     let longitude: Double
     

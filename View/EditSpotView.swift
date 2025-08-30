@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import _PhotosUI_SwiftUI
 
 struct EditSpotView: View {
     
@@ -30,6 +31,26 @@ struct EditSpotView: View {
                 Section {
                     TextField("Spot name", text: $viewModel.name)
                     RatingView(rating: $viewModel.rating)
+                }
+                
+                Section("Photo") {
+                    if let imageData = viewModel.selectedPhotoData, let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: .infinity, maxHeight: 300)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                    
+                    PhotosPicker(selection: $viewModel.selectedPhotoItem, matching: .images) {
+                    
+                        Text(viewModel.selectedPhotoData == nil ? "Add Photo" : "Change Photo")
+                    }
+                }
+                .onChange(of: viewModel.selectedPhotoItem) {
+                    Task {
+                        await viewModel.loadImage()
+                    }
                 }
                 
                 Section("Notes") {
