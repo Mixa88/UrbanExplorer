@@ -12,6 +12,7 @@
 		BA4FD7C72E631EC10091DC78 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BA681C1B2E5F826900B8C4E5 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BAD1B1692E61C6E70002E7C2 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
+		BADA22AA2E6422CF00FA23A6 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +70,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BADA22AC2E6422CF00FA23A6 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +128,10 @@
 			productRefGroup = BA0E7DB42E5F36EA00A4DA88 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = BADA22AC2E6422CF00FA23A6 /* Products */;
+					ProjectRef = BADA22AA2E6422CF00FA23A6 /* UrbanExplorer.xcodeproj */;
+				},
 				{
 					ProductGroup = BA4FD7C92E631EC10091DC78 /* Products */;
 					ProjectRef = BA4FD7C72E631EC10091DC78 /* UrbanExplorer.xcodeproj */;

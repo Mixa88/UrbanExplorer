@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct AppTabView: View {
+    
+    @State private var viewModel = MainMapView.ViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            MainMapView(viewModel: viewModel)
+                .tabItem {
+                    Label("Map", systemImage: "map.fill")
+                }
+            
+            Text("Here will be a list of spots")
+                .tabItem {
+                    Label("Spots", systemImage: "list.bullet")
+                }
+        }
     }
 }
 

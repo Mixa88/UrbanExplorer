@@ -9,7 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MainMapView: View {
-    @State private var viewModel = ViewModel()
+   
+    @Bindable var viewModel: ViewModel
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -67,5 +68,5 @@ struct MainMapView: View {
 }
 
 #Preview {
-    MainMapView()
+    MainMapView(viewModel: MainMapView.ViewModel())
 }
