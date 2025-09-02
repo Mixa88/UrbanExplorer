@@ -18,7 +18,7 @@ struct AppTabView: View {
                     Label("Map", systemImage: "map.fill")
                 }
             
-            Text("Here will be a list of spots")
+            SpotsListView(viewModel: viewModel)
                 .tabItem {
                     Label("Spots", systemImage: "list.bullet")
                 }

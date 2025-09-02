@@ -69,5 +69,10 @@ extension MainMapView {
             }
         }
         
+        func deleteSpotFromList(at offsets: IndexSet) {
+            spots.remove(atOffsets: offsets)
+            save()
+        }
+        
     }
 }
