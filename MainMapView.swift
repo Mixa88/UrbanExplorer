@@ -12,17 +12,10 @@ struct MainMapView: View {
    
     @Bindable var viewModel: ViewModel
     
-    let startPosition = MapCameraPosition.region(
-        MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 50.4501, longitude: 30.5234),
-            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        )
-    )
-    
     var body: some View {
         NavigationStack {
             MapReader { proxy in
-                Map(initialPosition: startPosition) {
+                Map(position: $viewModel.mapRegion) {
                     ForEach(viewModel.spots) { spot in
                         Annotation(spot.name, coordinate: spot.coordinate) {
                             Image(systemName: "star.circle")
@@ -37,6 +30,9 @@ struct MainMapView: View {
                                 
                         }
                     }
+                }
+                .onAppear {
+                    viewModel.checkLocationAuthorization()
                 }
                 .mapStyle(viewModel.mapStyle)
                 .onTapGesture { position in

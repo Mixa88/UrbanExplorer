@@ -10,14 +10,28 @@
 		BA0E7DB32E5F36EA00A4DA88 /* UrbanExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0E7DC82E5F379E00A4DA88 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BA4FD7C72E631EC10091DC78 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
+		BA5FB8312E67212D00B85324 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BA681C1B2E5F826900B8C4E5 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BAD1B1692E61C6E70002E7C2 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 		BADA22AA2E6422CF00FA23A6 /* UrbanExplorer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = UrbanExplorer.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BA5FB8412E67237200B85324 /* Exceptions for "UrbanExplorer" folder in "UrbanExplorer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"UrbanExplorer-Info.plist",
+			);
+			target = BA0E7DB22E5F36EA00A4DA88 /* UrbanExplorer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BA0E7DB52E5F36EA00A4DA88 /* UrbanExplorer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BA5FB8412E67237200B85324 /* Exceptions for "UrbanExplorer" folder in "UrbanExplorer" target */,
+			);
 			name = UrbanExplorer;
 			sourceTree = "<group>";
 		};
@@ -56,6 +70,11 @@
 			sourceTree = "<group>";
 		};
 		BA4FD7C92E631EC10091DC78 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA5FB8332E67212D00B85324 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +127,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					BA0E7DB22E5F36EA00A4DA88 = {
 						CreatedOnToolsVersion = 16.0;
@@ -143,6 +162,10 @@
 				{
 					ProductGroup = BA681C1D2E5F826900B8C4E5 /* Products */;
 					ProjectRef = BA681C1B2E5F826900B8C4E5 /* UrbanExplorer.xcodeproj */;
+				},
+				{
+					ProductGroup = BA5FB8332E67212D00B85324 /* Products */;
+					ProjectRef = BA5FB8312E67212D00B85324 /* UrbanExplorer.xcodeproj */;
 				},
 				{
 					ProductGroup = BAD1B16B2E61C6E70002E7C2 /* Products */;
@@ -212,6 +235,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M4AN86ZBTV;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -275,6 +299,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M4AN86ZBTV;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -304,9 +329,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M4AN86ZBTV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UrbanExplorer-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to center the map and show nearby spots.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -333,9 +359,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M4AN86ZBTV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UrbanExplorer-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to center the map and show nearby spots.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

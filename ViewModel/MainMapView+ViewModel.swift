@@ -8,19 +8,32 @@
 import Foundation
 import MapKit
 import CoreLocation
-import LocalAuthentication
 import SwiftUI
+
+extension MainMapView.ViewModel: CLLocationManagerDelegate {
+    
+}
 
 extension MainMapView {
     @Observable
-    class ViewModel {
+    class ViewModel: NSObject {
         
         private(set) var spots: [Spot]
         var selectedSpot: Spot?
-        
+    
         let savePath = URL.documentsDirectory.appending(path: "SavedSpots")
-        
         var isHybrid: Bool = false
+        
+        
+        private var locationManager: CLLocationManager!
+        var mapRegion = MapCameraPosition.region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: 50.4501, longitude: 30.5234),
+                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            )
+        )
+        
+        
         var mapStyle: MapStyle {
             if isHybrid {
                 return .hybrid
@@ -29,13 +42,17 @@ extension MainMapView {
             }
         }
         
-        init() {
+        override init() {
             do {
                 let data = try Data(contentsOf: savePath)
                 spots = try JSONDecoder().decode([Spot].self, from: data)
             } catch {
                 spots = []
             }
+            
+            super.init()
+            
+            setupLocationManager()
         }
         
         func save() {
@@ -73,6 +90,42 @@ extension MainMapView {
             spots.remove(atOffsets: offsets)
             save()
         }
+        
+        private func setupLocationManager() {
+                    locationManager = CLLocationManager()
+                    locationManager?.delegate = self
+                }
+        
+        func checkLocationAuthorization() {
+                    guard let locationManager = locationManager else { return }
+
+                    switch locationManager.authorizationStatus {
+                    case .notDetermined:
+                        locationManager.requestWhenInUseAuthorization()
+                    case .restricted:
+                        print("Your location is restricted.")
+                    case .denied:
+                        print("You have denied location permission. Please enable it in settings.")
+                    case .authorizedAlways, .authorizedWhenInUse:
+                        
+                        if let location = locationManager.location {
+                            
+                            let newRegion = MKCoordinateRegion(
+                                center: location.coordinate,
+                                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                            )
+
+                            
+                            mapRegion = .region(newRegion)
+                        }
+                    @unknown default:
+                        break
+                    }
+                }
+        
+        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+                    checkLocationAuthorization()
+                }
         
     }
 }
